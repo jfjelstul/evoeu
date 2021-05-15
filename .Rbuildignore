@@ -1,7 +1,12 @@
+^\.travis\.yml$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^data-raw$
 ^cran-comments\.md$
+^revdep$
 ^CRAN-RELEASE$
+^codecov\.yml$
 ^\.github$
+^_pkgdown\.yml$
 ^docs$
+^pkgdown$
