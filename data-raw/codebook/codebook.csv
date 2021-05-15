@@ -1,0 +1,19 @@
+key_id,dataset_id,dataset,variable_id,variable,type,description
+1,1,nodes,1,key_id,numeric,An ID number that uniquely identifies each observation. Indicates the default sorting order.
+2,1,nodes,2,celex,string,The CELEX number for the document.
+3,1,nodes,3,node_type_id,numeric,An ID number that uniquely identifies the type of the outgoing node.
+4,1,nodes,4,node_type,string,"The type of the node. Possible values include: {Treaty articles}, {Directives}, {Regulations}. {Decisions}, {Court of Justice judgments}, {Advocate general opinions}, {General Court judgments}, {National implementing measures}, and {National court decisions}."
+5,1,nodes,5,author,string,"The author of the document. If there are multiple authors, they are listed, separated by a comma."
+6,1,nodes,6,date,date,The date of the document in a {YYYY-MM-DD} format. Coded {NA} for national implementing measures.
+7,1,nodes,7,year,numeric,The year of the document. Coded {NA} for national implementing measures.
+8,1,nodes,8,month,numeric,The month of the document. Coded {NA} for national implementing measures.
+9,1,nodes,9,day,numeric,The day of the document. Coded {NA} for national implementing measures.
+10,2,edges,1,key_id,numeric,An ID number that uniquely identifies each observation. Indicates the default sorting order.
+11,2,edges,2,outgoing_celex,string,The CELEX number of the outgoing document (the document that creates the edge).
+12,2,edges,3,outgoing_node_type_id,numeric,An ID number that uniquely identifies the type of the outgoing node.
+13,2,edges,4,outgoing_node_type,string,"The type of the outgoing node (the document that creates the edge). Possible values include: {Treaty articles}, {Directives}, {Regulations}. {Decisions}, {Court of Justice judgments}, {Advocate general opinions}, {General Court judgments}, {National implementing measures}, and {National court decisions}."
+14,2,edges,5,edge_type_id,numeric,An ID number that uniquely identifies the type of the edge.
+15,2,edges,6,edge_type,string,"The type of the edge. Possible values include: {Cites all or part of}, {Changes text in clause of}, {Replaces clause of}, {Adds text to clause of}, {Inserts new clause in}, {Repeals all or part of}, {Has legal basis in}, {Interprets all or part of}, {Answers question referred by}, {Determines compliance with}, {Upholds all or part of}, {Overturns all or part of}, and{Transposes all or part of}."
+16,2,edges,7,incoming_celex,string,The CELEX number of the incoming document (the document that the edge leads to). 
+17,2,edges,8,incoming_node_type_id,numeric,An ID number that uniquely identifies the type of the incoming node.
+18,2,edges,9,incoming_node_type,string,"The type of the incoming node (the document that the edge leads to). Possible values include: {Treaty articles}, {Directives}, {Regulations}. {Decisions}, {Court of Justice judgments}, {Advocate general opinions}, {General Court judgments}, {National implementing measures}, and {National court decisions}."
