@@ -1,0 +1,15 @@
+Package: evoeu
+Type: Package
+Title: The Evolution of European Union Law (EvoEU) Database
+Version: 0.1.0
+Authors@R: person(given = "Joshua",
+           family = "Fjelstul",
+           role = c("aut", "cre"),
+           email = "joshfjelstul@gmail.com",
+           comment = c(ORCID = "0000-0002-9494-260X"))
+Description: This package procides access to the Evolution of European Union Law (EvoEU) Database by Joshua Fjelstul, Ph.D.
+URL: https://github.com/jfjelstul/evoeu
+Date: 2021-05-15
+License: MIT + file LICENSE 
+Encoding: UTF-8
+LazyData: true
