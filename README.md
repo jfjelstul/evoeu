@@ -13,6 +13,10 @@ You can install the latest development version of the `evoeu` package from GitHu
 devtools::install_github("jfjelstul/evoeu")
 ```
 
+## Documentation
+
+The codebook for the database is included as a `tibble` in the `R` package: `evoeu::codebook`. The same information is also available in the `R` documentation for each dataset. For example, you can see the codebook for the `evoeu::nodes` dataset by running `?evoeu::nodes`.
+
 ## Citation
 
 If you use data from the `evoeu` package in a project or paper, please cite the following article in European Union Politics:
