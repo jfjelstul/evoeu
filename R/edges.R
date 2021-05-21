@@ -5,7 +5,7 @@
 ################################################################################
 
 #' Edges data
-#' 
+#'
 #' The \code{edges} dataset includes one observation per edge in the network
 #' of European Union legal documents. An edge is a connection between two
 #' documents, created by the newer of the two documents. The dataset tracks
@@ -23,7 +23,7 @@
 #' or part of} (relates to court cases), \code{Overturns all or part of}
 #' (relates to court cases), and \code{Transposes all or part of} (relates to
 #' national implementing measures).
-#' 
+#'
 #' @format A data frame with 9 variables:
 #' \describe{
 #' \item{key_id}{Numeric. An ID number that uniquely identifies each
@@ -63,4 +63,3 @@
 ################################################################################
 # end R script
 ################################################################################
-

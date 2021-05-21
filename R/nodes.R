@@ -5,7 +5,7 @@
 ################################################################################
 
 #' Nodes data
-#' 
+#'
 #' The \code{nodes} dataset includes one one observation per node in the
 #' network of European Union legal documents. Each node is a document. This
 #' network includes primary law (i.e., treaty articles), secondary law (i.e.,
@@ -18,7 +18,7 @@
 #' implementing measures (i.e., national legislation that member states enact
 #' to transpose EU directives), and national court decisions that apply EU
 #' law.
-#' 
+#'
 #' @format A data frame with 9 variables:
 #' \describe{
 #' \item{key_id}{Numeric. An ID number that uniquely identifies each
@@ -47,4 +47,3 @@
 ################################################################################
 # end R script
 ################################################################################
-
