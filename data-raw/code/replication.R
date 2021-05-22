@@ -7,8 +7,8 @@
 # read in data
 ##################################################
 
-nodes <- read.csv("data-raw/EvoEU_nodes.csv", stringsAsFactors = FALSE)
-edges <- read.csv("data-raw/EvoEU_edges.csv", stringsAsFactors = FALSE)
+nodes <- read.csv("data-raw/evoeu_nodes.csv", stringsAsFactors = FALSE)
+edges <- read.csv("data-raw/evoeu_edges.csv", stringsAsFactors = FALSE)
 
 ##################################################
 # clean node data
@@ -122,6 +122,30 @@ codebookr::document_data(
   author = "Joshua C. Fjelstul, Ph.D.",
   package = "evoeu"
 )
+
+##################################################
+# load data
+##################################################
+
+load("data/nodes.RData")
+load("data/edges.RData")
+load("data/codebook.RData")
+
+##################################################
+# build
+##################################################
+
+write.csv(nodes, "build/evoeu_nodes.csv", row.names = FALSE, quote = TRUE)
+write.csv(edges, "build/evoeu_edges.csv", row.names = FALSE, quote = TRUE)
+write.csv(codebook, "build/evoeu_codebook.csv", row.names = FALSE, quote = TRUE)
+
+##################################################
+# server
+##################################################
+
+write.csv(nodes, "server/evoeu_nodes.csv", row.names = FALSE, quote = TRUE, na = "\\N")
+write.csv(edges, "server/evoeu_edges.csv", row.names = FALSE, quote = TRUE, na = "\\N")
+write.csv(codebook, "server/evoeu_codebook.csv", row.names = FALSE, quote = TRUE, na = "\\N")
 
 ###########################################################################
 # end R script
