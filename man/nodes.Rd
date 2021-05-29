@@ -3,7 +3,7 @@
 \docType{data}
 \name{nodes}
 \alias{nodes}
-\title{Nodes data}
+\title{Data on documents in the acquis communautaire}
 \format{
 A data frame with 9 variables:
 \describe{
@@ -33,10 +33,10 @@ implementing measures.}
 nodes
 }
 \description{
-The \code{nodes} dataset includes one one observation per node in the
-network of European Union legal documents. Each node is a document. This
-network includes primary law (i.e., treaty articles), secondary law (i.e.,
-legislation), and case law (i.e., court cases). The dataset incdicates the
+This dataset includes one one observation per node in the network of
+European Union legal documents. Each node is a document. This network
+includes primary law (i.e., treaty articles), secondary law (i.e.,
+legislation), and case law (i.e., court cases). The dataset indicates the
 CELEX number of each document, which is a unique ID number assigned by
 EUR-Lex, the date of the document, the author of the document, and the type
 of the document. The dataset includes the following types of documents:

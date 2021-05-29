@@ -3,7 +3,7 @@
 \docType{data}
 \name{edges}
 \alias{edges}
-\title{Edges data}
+\title{Data on links between documents in the acquis communautaire}
 \format{
 A data frame with 9 variables:
 \describe{
@@ -44,22 +44,18 @@ articles}, \code{Directives}, \code{Regulations}. \code{Decisions},
 edges
 }
 \description{
-The \code{edges} dataset includes one observation per edge in the network
-of European Union legal documents. An edge is a connection between two
-documents, created by the newer of the two documents. The dataset tracks
-the following types of connections: \code{Cites all or part of} (relates to
-all types of documents), \code{Changes text in clause of} (relates to
-secondary laws), \code{Replaces clause of} (relates to seconary laws),
-\code{Adds text to clause of} (relates to secondary laws), \code{Inserts
-new clause in} (relates to secondary laws), \code{Repeals all or part of}
-(relates to secondary laws), \code{Has legal basis in} (relates to
-secondary laws), \code{Interprets all or part of} (relates to references
-for a preliminary ruling at the Court of Justice), \code{Answers question
-referred by} (relates to references fror a preliminary ruling at the Court
-of Justice), \code{Determines compliance with} (relates to actions for
-failure to fulfill obligations at the Court of Justice), \code{Upholds all
-or part of} (relates to court cases), \code{Overturns all or part of}
-(relates to court cases), and \code{Transposes all or part of} (relates to
-national implementing measures).
+This dataset includes on observation per edges in the network of European
+Union legal documents. An edge is a connection between two documents,
+created by the newer of the two documents. The dataset tracks the following
+types of connections: "cites all or part of" (most types of documents),
+"changes text in clause of" (secondary laws), "replaces clause of"
+(secondary laws), "adds text to clause of" (secondary laws), "inserts new
+clause in" (secondary laws), "repeals all or part of" (secondary laws),
+"has legal basis in" (secondary laws), "interprets all or part of"
+(references for a preliminary ruling), "answers question referred by"
+(references for a preliminary ruling), "determines compliance with"
+(actions for failure to fulfill obligations), "upholds all or part of"
+(case law), "overturns all or part of" (case law), and "transposes all or
+part of" (national implementing measures).
 }
 \keyword{datasets}

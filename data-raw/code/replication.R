@@ -1,7 +1,7 @@
-###########################################################################
+################################################################################
 # Joshua C. Fjelstul, Ph.D.
 # evoeu R package
-###########################################################################
+################################################################################
 
 ##################################################
 # read in data
@@ -85,13 +85,20 @@ edges$edge_type_id <- as.numeric(edges$edge_type_id)
 # edge type
 edges$edge_type <- stringr::str_remove(edges$edge_type, "^E[0-9]+: ")
 
+# merge in date
+edges <- dplyr::left_join(
+  edges,
+  dplyr::select(nodes, celex, date, year),
+  by = c("outgoing_celex" = "celex")
+)
+
 # organize variables
 edges <- dplyr::select(
   edges,
   key_id,
   outgoing_celex, outgoing_node_type_id, outgoing_node_type,
   edge_type_id, edge_type,
-  incoming_celex, incoming_node_type_id, incoming_node_type
+  incoming_celex, incoming_node_type_id, incoming_node_type,
 )
 
 ##################################################
@@ -106,7 +113,7 @@ save(edges, file = "data/edges.RData")
 ##################################################
 
 # read in data
-codebook <- read.csv("data-raw/codebook/codebook.csv", stringsAsFactors = FALSE)
+codebook <- read.csv("data-raw/documentation/evoeu_codebook.csv", stringsAsFactors = FALSE)
 
 # convert to a tibble
 codebook <- dplyr::as_tibble(codebook)
@@ -114,11 +121,27 @@ codebook <- dplyr::as_tibble(codebook)
 # save
 save(codebook, file = "data/codebook.RData")
 
-# documentation
+##################################################
+# datasets
+##################################################
+
+# read in data
+datasets <- read.csv("data-raw/documentation/evoeu_datasets.csv", stringsAsFactors = FALSE)
+
+# convert to a tibble
+datasets <- dplyr::as_tibble(datasets)
+
+# save
+save(datasets, file = "data/datasets.RData")
+
+##################################################
+# document
+##################################################
+
 codebookr::document_data(
   path = "R/",
-  codebook_file = "data-raw/codebook/codebook.csv",
-  markdown_file = "data-raw/codebook/descriptions.txt",
+  codebook_file = "data-raw/documentation/evoeu_codebook.csv",
+  datasets_file = "data-raw/documentation/evoeu_datasets.csv",
   author = "Joshua C. Fjelstul, Ph.D.",
   package = "evoeu"
 )
@@ -130,6 +153,7 @@ codebookr::document_data(
 load("data/nodes.RData")
 load("data/edges.RData")
 load("data/codebook.RData")
+load("data/datasets.RData")
 
 ##################################################
 # build
@@ -138,15 +162,8 @@ load("data/codebook.RData")
 write.csv(nodes, "build/evoeu_nodes.csv", row.names = FALSE, quote = TRUE)
 write.csv(edges, "build/evoeu_edges.csv", row.names = FALSE, quote = TRUE)
 write.csv(codebook, "build/evoeu_codebook.csv", row.names = FALSE, quote = TRUE)
+write.csv(datasets, "build/evoeu_datasets.csv", row.names = FALSE, quote = TRUE)
 
-##################################################
-# server
-##################################################
-
-write.csv(nodes, "server/evoeu_nodes.csv", row.names = FALSE, quote = TRUE, na = "\\N")
-write.csv(edges, "server/evoeu_edges.csv", row.names = FALSE, quote = TRUE, na = "\\N")
-write.csv(codebook, "server/evoeu_codebook.csv", row.names = FALSE, quote = TRUE, na = "\\N")
-
-###########################################################################
+################################################################################
 # end R script
-###########################################################################
+################################################################################
