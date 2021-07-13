@@ -7,26 +7,26 @@
 \format{
 A data frame with 9 variables:
 \describe{
-\item{key_id}{Numeric. An ID number that uniquely identifies each
+\item{key_id}{\code{numeric}. An ID number that uniquely identifies each
 observation. Indicates the default sorting order.}
-\item{celex}{String. The CELEX number for the document.}
-\item{node_type_id}{Numeric. An ID number that uniquely identifies the type
-of the outgoing node.}
-\item{node_type}{String. The type of the node. Possible values include:
-\code{Treaty articles}, \code{Directives}, \code{Regulations}.
+\item{celex}{\code{string}. The CELEX number for the document.}
+\item{node_type_id}{\code{numeric}. An ID number that uniquely identifies
+the type of the outgoing node.}
+\item{node_type}{\code{string}. The type of the node. Possible values
+include: \code{Treaty articles}, \code{Directives}, \code{Regulations}.
 \code{Decisions}, \code{Court of Justice judgments}, \code{Advocate general
 opinions}, \code{General Court judgments}, \code{National implementing
 measures}, and \code{National court decisions}.}
-\item{author}{String. The author of the document. If there are multiple
-authors, they are listed, separated by a comma.}
-\item{date}{Date. The date of the document in a \code{YYYY-MM-DD} format.
-Coded \code{NA} for national implementing measures.}
-\item{year}{Numeric. The year of the document. Coded \code{NA} for national
-implementing measures.}
-\item{month}{Numeric. The month of the document. Coded \code{NA} for
+\item{author}{\code{string}. The author of the document. If there are
+multiple authors, they are listed, separated by a comma.}
+\item{date}{\code{date}. The date of the document in a \code{YYYY-MM-DD}
+format. Coded \code{NA} for national implementing measures.}
+\item{year}{\code{numeric}. The year of the document. Coded \code{NA} for
 national implementing measures.}
-\item{day}{Numeric. The day of the document. Coded \code{NA} for national
-implementing measures.}
+\item{month}{\code{numeric}. The month of the document. Coded \code{NA} for
+national implementing measures.}
+\item{day}{\code{numeric}. The day of the document. Coded \code{NA} for
+national implementing measures.}
 }
 }
 \usage{

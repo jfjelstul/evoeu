@@ -113,13 +113,13 @@ save(edges, file = "data/edges.RData")
 ##################################################
 
 # read in data
-codebook <- read.csv("data-raw/documentation/evoeu_codebook.csv", stringsAsFactors = FALSE)
+variables <- read.csv("data-raw/documentation/evoeu_variables.csv", stringsAsFactors = FALSE)
 
 # convert to a tibble
-codebook <- dplyr::as_tibble(codebook)
+variables <- dplyr::as_tibble(variables)
 
 # save
-save(codebook, file = "data/codebook.RData")
+save(variables, file = "data/variables.RData")
 
 ##################################################
 # datasets
@@ -135,15 +135,42 @@ datasets <- dplyr::as_tibble(datasets)
 save(datasets, file = "data/datasets.RData")
 
 ##################################################
-# document
+# documentation
 ##################################################
 
+# documentation
+load("data/variables.RData")
+load("data/datasets.RData")
+
+# document data
 codebookr::document_data(
-  path = "R/",
-  codebook_file = "data-raw/documentation/evoeu_codebook.csv",
-  datasets_file = "data-raw/documentation/evoeu_datasets.csv",
+  file_path = "R/",
+  variables_input = variables,
+  datasets_input = datasets,
+  include_variable_type = TRUE,
   author = "Joshua C. Fjelstul, Ph.D.",
   package = "evoeu"
+)
+
+##################################################
+# codebook
+##################################################
+
+# create a codebook
+codebookr::create_codebook(
+  file_path = "codebook/evoeu_codebook.tex",
+  datasets_input = datasets,
+  variables_input = variables,
+  title_text = "The Evolution of European Union Law \\\\ (EvoEU) Database",
+  version_text = "1.0",
+  footer_text = "The EvoEU Database Codebook \\hspace{5pt} | \\hspace{5pt} Joshua C. Fjelstul, Ph.D.",
+  author_names = "Joshua C. Fjelstul, Ph.D.",
+  theme_color = "#4D9FEB",
+  heading_font_size = 30,
+  subheading_font_size = 10,
+  title_font_size = 16,
+  table_of_contents = TRUE,
+  include_variable_type = TRUE
 )
 
 ##################################################
@@ -152,7 +179,7 @@ codebookr::document_data(
 
 load("data/nodes.RData")
 load("data/edges.RData")
-load("data/codebook.RData")
+load("data/variables.RData")
 load("data/datasets.RData")
 
 ##################################################
@@ -161,7 +188,7 @@ load("data/datasets.RData")
 
 write.csv(nodes, "build/evoeu_nodes.csv", row.names = FALSE, quote = TRUE)
 write.csv(edges, "build/evoeu_edges.csv", row.names = FALSE, quote = TRUE)
-write.csv(codebook, "build/evoeu_codebook.csv", row.names = FALSE, quote = TRUE)
+write.csv(variables, "build/evoeu_variables.csv", row.names = FALSE, quote = TRUE)
 write.csv(datasets, "build/evoeu_datasets.csv", row.names = FALSE, quote = TRUE)
 
 ################################################################################

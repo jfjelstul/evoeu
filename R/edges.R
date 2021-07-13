@@ -22,32 +22,32 @@
 #' 
 #' @format A data frame with 9 variables:
 #' \describe{
-#' \item{key_id}{Numeric. An ID number that uniquely identifies each
+#' \item{key_id}{\code{numeric}. An ID number that uniquely identifies each
 #' observation. Indicates the default sorting order.}
-#' \item{outgoing_celex}{String. The CELEX number of the outgoing document
-#' (the document that creates the edge).}
-#' \item{outgoing_node_type_id}{Numeric. An ID number that uniquely identifies
-#' the type of the outgoing node.}
-#' \item{outgoing_node_type}{String. The type of the outgoing node (the
+#' \item{outgoing_celex}{\code{string}. The CELEX number of the outgoing
+#' document (the document that creates the edge).}
+#' \item{outgoing_node_type_id}{\code{numeric}. An ID number that uniquely
+#' identifies the type of the outgoing node.}
+#' \item{outgoing_node_type}{\code{string}. The type of the outgoing node (the
 #' document that creates the edge). Possible values include: \code{Treaty
 #' articles}, \code{Directives}, \code{Regulations}. \code{Decisions},
 #' \code{Court of Justice judgments}, \code{Advocate general opinions},
 #' \code{General Court judgments}, \code{National implementing measures}, and
 #' \code{National court decisions}.}
-#' \item{edge_type_id}{Numeric. An ID number that uniquely identifies the type
-#' of the edge.}
-#' \item{edge_type}{String. The type of the edge. Possible values include:
-#' \code{Cites all or part of}, \code{Changes text in clause of},
+#' \item{edge_type_id}{\code{numeric}. An ID number that uniquely identifies
+#' the type of the edge.}
+#' \item{edge_type}{\code{string}. The type of the edge. Possible values
+#' include: \code{Cites all or part of}, \code{Changes text in clause of},
 #' \code{Replaces clause of}, \code{Adds text to clause of}, \code{Inserts new
 #' clause in}, \code{Repeals all or part of}, \code{Has legal basis in},
 #' \code{Interprets all or part of}, \code{Answers question referred by},
 #' \code{Determines compliance with}, \code{Upholds all or part of},
 #' \code{Overturns all or part of}, and\code{Transposes all or part of}.}
-#' \item{incoming_celex}{String. The CELEX number of the incoming document
-#' (the document that the edge leads to). }
-#' \item{incoming_node_type_id}{Numeric. An ID number that uniquely identifies
-#' the type of the incoming node.}
-#' \item{incoming_node_type}{String. The type of the incoming node (the
+#' \item{incoming_celex}{\code{string}. The CELEX number of the incoming
+#' document (the document that the edge leads to). }
+#' \item{incoming_node_type_id}{\code{numeric}. An ID number that uniquely
+#' identifies the type of the incoming node.}
+#' \item{incoming_node_type}{\code{string}. The type of the incoming node (the
 #' document that the edge leads to). Possible values include: \code{Treaty
 #' articles}, \code{Directives}, \code{Regulations}. \code{Decisions},
 #' \code{Court of Justice judgments}, \code{Advocate general opinions},
